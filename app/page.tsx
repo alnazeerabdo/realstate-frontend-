@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
 
 export default function HouzezHomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -83,15 +84,15 @@ export default function HouzezHomePage() {
                 <a href="#" className="hover:text-blue-200 flex items-center">
                   HOME <span className="ml-1">▼</span>
                 </a>
-                <a href="#" className="hover:text-blue-200 flex items-center">
+                <Link href="/properties" className="hover:text-blue-200 flex items-center">
                   PROPERTIES <span className="ml-1">▼</span>
-                </a>
+                </Link>
                 <a href="#" className="hover:text-blue-200 flex items-center">
                   PROPERTY <span className="ml-1">▼</span>
                 </a>
-                <a href="#" className="hover:text-blue-200 flex items-center">
+                <Link href="/agents" className="hover:text-blue-200 flex items-center">
                   REALTOR <span className="ml-1">▼</span>
-                </a>
+                </Link>
                 <a href="#" className="hover:text-blue-200 flex items-center">
                   OTHERS <span className="ml-1">▼</span>
                 </a>
@@ -221,7 +222,10 @@ export default function HouzezHomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* Property Card 1 */}
-            <Card className="overflow-hidden shadow-lg">
+            <Card
+              className="overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+              onClick={() => (window.location.href = "/property/1")}
+            >
               <div className="relative">
                 <Image
                   src="/placeholder.svg?height=250&width=400"
@@ -232,10 +236,26 @@ export default function HouzezHomePage() {
                 />
                 <Badge className="absolute top-4 left-4 bg-green-500">FOR RENT</Badge>
                 <div className="absolute top-4 right-4 flex space-x-2">
-                  <Button size="sm" variant="secondary" className="p-2">
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    className="p-2"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      // Handle favorite action
+                    }}
+                  >
                     <Heart className="w-4 h-4" />
                   </Button>
-                  <Button size="sm" variant="secondary" className="p-2">
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    className="p-2"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      // Handle camera action
+                    }}
+                  >
                     <Camera className="w-4 h-4" />
                   </Button>
                 </div>
@@ -259,7 +279,10 @@ export default function HouzezHomePage() {
             </Card>
 
             {/* Property Card 2 */}
-            <Card className="overflow-hidden shadow-lg">
+            <Card
+              className="overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+              onClick={() => (window.location.href = "/property/2")}
+            >
               <div className="relative">
                 <Image
                   src="/placeholder.svg?height=250&width=400"
@@ -290,7 +313,10 @@ export default function HouzezHomePage() {
             </Card>
 
             {/* Property Card 3 */}
-            <Card className="overflow-hidden shadow-lg">
+            <Card
+              className="overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+              onClick={() => (window.location.href = "/property/3")}
+            >
               <div className="relative">
                 <Image
                   src="/placeholder.svg?height=250&width=400"
@@ -321,7 +347,10 @@ export default function HouzezHomePage() {
             </Card>
 
             {/* Property Card 4 */}
-            <Card className="overflow-hidden shadow-lg">
+            <Card
+              className="overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+              onClick={() => (window.location.href = "/property/4")}
+            >
               <div className="relative">
                 <Image
                   src="/placeholder.svg?height=250&width=400"
@@ -351,7 +380,10 @@ export default function HouzezHomePage() {
             </Card>
 
             {/* Property Card 5 */}
-            <Card className="overflow-hidden shadow-lg">
+            <Card
+              className="overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+              onClick={() => (window.location.href = "/property/5")}
+            >
               <div className="relative">
                 <Image
                   src="/placeholder.svg?height=250&width=400"
@@ -381,7 +413,10 @@ export default function HouzezHomePage() {
             </Card>
 
             {/* Property Card 6 */}
-            <Card className="overflow-hidden shadow-lg">
+            <Card
+              className="overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+              onClick={() => (window.location.href = "/property/6")}
+            >
               <div className="relative">
                 <Image
                   src="/placeholder.svg?height=250&width=400"
